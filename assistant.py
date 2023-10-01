@@ -2,9 +2,10 @@ import speech_recognition as sr
 import pyttsx3
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 engine = pyttsx3.init()
+
 voices = engine.getProperty('voices')
 engine.setProperty('voices', voices[1].id)
 
@@ -13,17 +14,17 @@ mic = sr.Microphone(device_index=1)
 
 conversation = ""
 user_name = "HauNghe"
-bot_name = "HonQue"
+bot_name = "Hồn Quê"
 
 while True:
     with mic as source:
-        print("Hon Que: I'm listening to you...")
+        print("Hồn Quê: Tôi đang lắng nghe...")
         r.adjust_for_ambient_noise(source, duration=0.2)
         audio = r.listen(source)
-    print("I've heard your question.Wait for me...")
+    print("Tôi đã nghe được. Vui lòng chờ xử lý")
 
     try:
-        user_input = r.recognize_google(audio)
+        user_input = r.recognize_google(audio, language="vi-VI")
     except:
         continue
 

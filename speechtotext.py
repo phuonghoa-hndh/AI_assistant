@@ -4,13 +4,14 @@ import os
 
 ear = speech_recognition.Recognizer()
 with speech_recognition.Microphone() as mic:
-    print("Hon Que: I'm listening to you...")
+    print("Hồn Quê: Mời bạn trò chuyện...")
     audio = ear.listen(mic)
 try:
     text = ear.recognize_google(audio, language="vi-VI")
-    print("You: " + text)
+    print("Tôi: " + text)
 except:
-    text = "I don't understand what you're talking about."
+    text = "Tôi không hiểu những gì bạn nói"
+
 
 
 
